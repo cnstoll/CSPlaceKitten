@@ -38,7 +38,7 @@
         screen = [[[UIApplication sharedApplication] keyWindow] screen];
     }
     
-    if (screen != nil && screen.scale == 2.0) { // Request a sharper kitten if shown a retina screen
+    if (screen != nil && screen.scale == 2.0) { // Request a sharper kitten if shown on a retina screen
         width = width * 2;
         height = height * 2;
     }
