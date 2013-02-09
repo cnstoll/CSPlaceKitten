@@ -29,6 +29,20 @@
 - (void)placeKittenInImageView {
     NSInteger width = self.frame.size.width;
     NSInteger height = self.frame.size.height;
+    
+    UIScreen *screen = nil;
+    
+    if ([self.window screen]) { // Support for different windows, if the view has a window
+        screen = [self.window screen];
+    } else if ([[[UIApplication sharedApplication] keyWindow] screen]) { // Just use key window
+        screen = [[[UIApplication sharedApplication] keyWindow] screen];
+    }
+    
+    if (screen != nil && screen.scale == 2.0) { // Request a sharper kitten if shown a retina screen
+        width = width * 2;
+        height = height * 2;
+    }
+    
     NSString *kittenSize = [NSString stringWithFormat:@"%d/%d", width, height];
     NSString *kittenAddress = [NSString stringWithFormat:@"http://placekitten.com/g/%@", kittenSize];
     NSURL *url = [NSURL URLWithString:kittenAddress];
