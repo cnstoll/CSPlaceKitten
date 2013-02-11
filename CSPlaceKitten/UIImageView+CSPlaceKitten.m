@@ -34,13 +34,14 @@
     
     if ([self.window screen]) { // Support for different windows, if the view has a window
         screen = [self.window screen];
-    } else if ([[[UIApplication sharedApplication] keyWindow] screen]) { // Just use key window
-        screen = [[[UIApplication sharedApplication] keyWindow] screen];
+    }else{
+        //whoa this view hasn't been added to a window, but we totally should have one
+        screen = [UIScreen mainScreen];
     }
     
-    if (screen != nil && screen.scale == 2.0) { // Request a sharper kitten if shown on a retina screen
-        width = width * 2;
-        height = height * 2;
+    if (screen != nil && screen.scale > 1.f) { // Request a sharper kitten if shown on a retina screen
+        width = width * screen.scale;
+        height = height * screen.scale;
     }
     
     NSString *kittenSize = [NSString stringWithFormat:@"%d/%d", width, height];
