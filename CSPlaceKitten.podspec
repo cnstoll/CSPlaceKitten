@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'CSPlaceKitten'
-  s.version  = '1.0.0'
+  s.version  = '1.0.1'
   s.license  = 'MIT'
   s.summary  = 'A simple library for adding kittens to your placeholder views.'
   s.homepage = 'https://github.com/cnstoll/CSPlaceKitten'
