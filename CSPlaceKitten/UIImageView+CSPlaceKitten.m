@@ -44,7 +44,7 @@
         height = height * screen.scale;
     }
     
-    NSString *kittenSize = [NSString stringWithFormat:@"%ld/%ld", width, height];
+    NSString *kittenSize = [NSString stringWithFormat:@"%ld/%ld", (long)width, (long)height];
     NSString *kittenAddress = [NSString stringWithFormat:@"http://placekitten.com/g/%@", kittenSize];
     NSURL *url = [NSURL URLWithString:kittenAddress];
     [self setImageWithURL:url];
