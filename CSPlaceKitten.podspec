@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'CSPlaceKitten'
-  s.version  = '1.0.0'
+  s.version  = '1.0.1'
   s.license  = 'MIT'
   s.summary  = 'A simple library for adding kittens to your placeholder views.'
   s.homepage = 'https://github.com/cnstoll/CSPlaceKitten'
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Core'
 
   s.ios.deployment_target = '6.0'
-  s.osx.deployment_target = '10.8'
+  s.ios.frameworks = 'UIKit'
   
   s.subspec 'Core' do |core|
     core.source_files = 'CSPlaceKitten/*.{h,m}'
