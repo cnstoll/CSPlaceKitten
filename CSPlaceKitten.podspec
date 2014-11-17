@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'CSPlaceKitten'
-  s.version  = '1.0.1'
+  s.version  = '1.0.2'
   s.license  = 'MIT'
   s.summary  = 'A simple library for adding kittens to your placeholder views.'
   s.homepage = 'https://github.com/cnstoll/CSPlaceKitten'
@@ -15,6 +15,6 @@ Pod::Spec.new do |s|
   
   s.subspec 'Core' do |core|
     core.source_files = 'CSPlaceKitten/*.{h,m}'
-	core.dependency 'AFNetworking', '~> 1.0'
+	core.dependency 'AFNetworking'
   end  
 end
